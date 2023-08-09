@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Seeker's Pool 技能規格增加</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="./img/favicon.png" rel="icon">
+    <link href="./img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="./packageCSS/bootstrap.min.css" rel="stylesheet">
+    <link href="./packageCSS/bootstrap-icons.css" rel="stylesheet">
+    <link href="./packageCSS/boxicons.min.css" rel="stylesheet">
+    <link href="./packageCSS/quill.snow.css" rel="stylesheet">
+    <link href="./packageCSS/quill.bubble.css" rel="stylesheet">
+    <link href="./packageCSS/remixicon.css" rel="stylesheet">
+    <link href="./packageCSS/style.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="./css/Employee.css" rel="stylesheet">
+
+    <!-- Font Awesome-->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> -->
+    <script src="https://kit.fontawesome.com/244879c400.js" crossorigin="anonymous"></script>
+
+    <!-- =======================================================
+  * Template Name: NiceAdmin
+  * Updated: Mar 09 2023 with Bootstrap v5.2.3
+  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+    <style>
+        .mb-3,
+        .col-lg-2 {
+            display: flex;
+            justify-content: center;
+            /* 水平置中 */
+            align-items: center;
+            /* 垂直置中 */
+        }
+
+        .form-label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ========================== Header ================================ -->
+<header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex flex-row align-items-center justify-content-between" style="margin-bottom: -10px;">
+        <a href="Employee.html" class="logo d-flex align-items-center">
+            <img src="../../common/img/handshake-regular.svg" alt="" style="margin-right: 10px;">
+            <span class="d-none d-lg-block">
+                <h5 style="margin-bottom: 0px;"><a href="../administrator/administratorhome.html">Seeker's P<i
+                            class="fa-regular fa-face-smile"></i><i class="fa-regular fa-face-smile"></i>L
+                    </a></h5>
+            </span>
+        </a>
+        <img src="../../common/img/bars-solid.svg" class="toggle-sidebar-btn" alt="">
+    </div>
+    <!-- End Logo -->
+
+    <nav class="header-nav ms-auto">
+        <ul class="d-flex flex-row-reverse align-items-center">
+            <li class="nav-item pe-6">
+`				
+                <a class="profile-photo nav-profile d-flex align-items-center" href="#" style=" transform: translate(-90px, -15px);">
+<!--                     <img src="../../common/img/happy-quokka.jpg" alt="Profile" class="rounded-circle"> -->
+                    <span>Hi </span><span id="name"class="d-none d-md-block ps-2"></span>
+                </a>
+                
+                <!-- End 員工頭像 -->
+            </li>
+            <li>
+             	<a id="out"class="dropdown-item d-flex p-6 align-items-center" href="#" style=" transform: translate(40px, -2px);">
+                    <img src="../../common/img/right-from-bracket-solid.svg" alt=""><span id="out">登出</span>
+                </a>
+            </li>
+            <!-- End Profile Nav -->
+        </ul>
+    </nav>
+    <!-- End Icons Navigation -->
+</header>
+<!-- End Header -->
+
+    <!-- ========================= Sidebar ============================== -->
+<aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+        <li class="nav-item">
+            <a class="nav-link " href="../administrator/administratorhome.html">
+                <img src="../../common/img/house-solid.svg" alt="">
+                <span>Home</span>
+            </a>
+        </li>
+        <!-- End Dashboard Nav -->
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="../administrator/administrator.html">
+                <img src="../../common/img/user-regular.svg" alt=""><span>員工管理</span>
+<!--                 <img src="../../common/img/angle-down-solid.svg" -->
+<!--                     class="angle-down-solid ms-auto" alt=""> -->
+            </a>
+<!--             <ul id="administrator-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav"> -->
+<!--                 <li> -->
+<!--                     <a href="../administrator/administrator.html"> -->
+<!--                         <img src="../../common/img/circle-regular.svg" alt=""><span>員工資料管理</span> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                 <li> -->
+<!--                     <a href="../administrator/administratorauthority.html"> -->
+<!--                         <img src="../../common/img/circle-regular.svg" alt=""><span>員工權限管理</span> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                 <li> -->
+<!--                     <a href="./administratorlecturer.html"> -->
+<!--                         <img src="../../common/img/circle-regular.svg" alt=""><span>講師管理</span> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--             </ul> -->
+        </li>
+        <!-- End 員工管理 Nav -->
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="../companymember/allCompany.html">
+                <img src="../../common/img/address-card-regular.svg" alt=""><span>企業會員管理</span>
+<!--                 <img src="../../common/img/angle-down-solid.svg" -->
+<!--                     class="angle-down-solid ms-auto" alt=""> -->
+            </a>
+<!--             <ul id="member-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav"> -->
+<!--                 <li> -->
+<!--                     <a href="#"> -->
+<!--                         <img src="../../common/img/circle-regular.svg" alt=""><span>一般會員管理</span> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                 <li> -->
+<!--                     <a href="#"> -->
+<!--                         <img src="../../common/img/circle-regular.svg" alt=""><span>企業會員管理</span> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--             </ul> -->
+        </li>
+        <!-- End 會員管理 Nav -->
+
+<!--         <li class="nav-item"> -->
+<!--             <a class="nav-link collapsed" data-bs-target="#lecturer-nav" data-bs-toggle="collapse" href="#"> -->
+<!--                 <img src="../../common/img/user-tie-solid.svg" alt=""><span>講師專區</span><img src="../../common/img/angle-down-solid.svg" -->
+<!--                     class="angle-down-solid ms-auto" alt=""> -->
+<!--             </a> -->
+<!--             <ul id="lecturer-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav"> -->
+<!--                 <li> -->
+<!--                     <a href="#"> -->
+<!--                         <img src="../../common/img/circle-regular.svg" alt=""><span>講師總覽</span> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                 <li> -->
+<!--                     <a href="#"> -->
+<!--                         <img src="../../common/img/circle-regular.svg" alt=""><span>留言區回覆</span> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--             </ul> -->
+<!--         </li> -->
+        <!-- End 講師專區 Nav -->
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#job-nav" data-bs-toggle="collapse" href="#">
+                <img src="../../common/img/briefcase-solid.svg" alt=""></i><span>職缺管理</span><img src="../../common/img/angle-down-solid.svg"
+                    class="angle-down-solid ms-auto" alt="">
+            </a>
+            <ul id="job-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                <li>
+                    <a href="../job/JobType.html">
+                        <img src="../../common/img/circle-regular.svg" alt=""><span>職務規格維護</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../job/JobSkill.html">
+                        <img src="../../common/img/circle-regular.svg" alt=""><span>技能規格維護</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../report/JobReportShow.html">
+                        <img src="../../common/img/circle-regular.svg" alt=""><span>審核管理</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <!-- End 職缺管理 Nav -->
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#job-case-nav" data-bs-toggle="collapse" href="#">
+                <img src="../../common/img/rectangle-ad-solid.svg" alt=""><span>職缺刊登方案管理</span><img
+                    src="../../common/img/angle-down-solid.svg" class="angle-down-solid ms-auto" alt="">
+            </a>
+            <ul id="job-case-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                <li>
+                    <a href="../jobcase/jobcase.html">
+                        <img src="../../common/img/circle-regular.svg" alt=""><span>職缺刊登方案</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../jobcase/jobcaseorder.html">
+                        <img src="../../common/img/circle-regular.svg" alt=""><span>職缺刊登訂單管理</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <!-- End 職缺刊登方案管理 Nav -->
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#online-course-nav" data-bs-toggle="collapse" href="#">
+                <img src="../../common/img/circle-play-regular.svg" alt=""></i><span>線上訓練課程管理</span><img
+                    src="../../common/img/angle-down-solid.svg" class="angle-down-solid ms-auto" alt="">
+            </a>
+            <ul id="online-course-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                <li>
+                    <a href="./CourseManagement.html">
+                        <img src="../../common/img/circle-regular.svg" alt=""><span>線上課程管理</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="./CourseAdd.html">
+                        <img src="../../common/img/circle-regular.svg" alt=""><span>課程訂單管理</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <!-- End 線上訓練課程管理 Nav -->
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#job-fair-nav" data-bs-toggle="collapse" href="#">
+                <img src="../../common/img/lightbulb-regular.svg" alt=""></i><span>徵才博覽會管理</span><img
+                    src="../../common/img/angle-down-solid.svg" class="angle-down-solid ms-auto" alt="">
+            </a>
+            <ul id="job-fair-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                <li>
+                    <a href="../jobfair/jfback/job_fair.html">
+                        <img src="../../common/img/circle-regular.svg" alt=""><span>活動管理</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../jobfair/jfback/Exhibitor.html">
+                        <img src="../../common/img/circle-regular.svg" alt=""><span>參展企業管理</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <!-- End 徵才博覽會管理 Nav -->
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="../jobfair/jfback/job_fair_article.html">
+                <img src="../../common/img/newspaper-regular.svg" alt=""><span>徵才活動文章管理</span>
+<!--                 <img src="../../common/img/angle-down-solid.svg" -->
+<!--                     class="angle-down-solid ms-auto" alt=""> -->
+            </a>
+<!--             <ul id="article-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav"> -->
+<!--                 <li> -->
+<!--                     <a href="#"> -->
+<!--                         <img src="../../common/img/circle-regular.svg" alt=""><span>徵才活動文章</span> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                 <li> -->
+<!--                     <a href="#"> -->
+<!--                         <img src="../../common/img/circle-regular.svg" alt=""><span>審核被檢舉文章</span> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--             </ul> -->
+        </li>
+        <!-- End 文章專區管理 Nav -->
+
+<!--         <li class="nav-item"> -->
+<!--             <a class="nav-link collapsed" data-bs-target="#scheduler-nav" data-bs-toggle="collapse" href="#"> -->
+<!--                 <img src="../../common/img/calendar-days-regular.svg" alt=""><span>排程器管理</span><img -->
+<!--                     src="../../common/img/angle-down-solid.svg" class="angle-down-solid ms-auto" alt=""> -->
+<!--             </a> -->
+<!--             <ul id="scheduler-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav"> -->
+<!--                 <li> -->
+<!--                     <a href="#"> -->
+<!--                         <img src="../../common/img/circle-regular.svg" alt=""><span>熱門職務&技能</span> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--             </ul> -->
+<!--         </li> -->
+        <!-- End 排程器管理 Nav -->
+
+<!--         <li class="nav-item"> -->
+<!--             <a class="nav-link collapsed" data-bs-target="#info-nav" data-bs-toggle="collapse" href="#"> -->
+<!--                 <img src="../../common/img/circle-question-regular.svg" alt=""></i><span>前台資訊管理</span><img -->
+<!--                     src="../../common/img/angle-down-solid.svg" class="angle-down-solid ms-auto" alt=""> -->
+<!--             </a> -->
+<!--             <ul id="info-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav"> -->
+<!--                 <li> -->
+<!--                     <a href="#"> -->
+<!--                         <img src="../../common/img/circle-regular.svg" alt=""><span>最新消息管理</span> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                 <li> -->
+<!--                     <a href="#"> -->
+<!--                         <img src="../../common/img/circle-regular.svg" alt=""><span>電子報管理</span> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                 <li> -->
+<!--                     <a href="#"> -->
+<!--                         <img src="../../common/img/circle-regular.svg" alt=""><span>FAQ管理</span> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--             </ul> -->
+<!--         </li> -->
+        <!-- End 前台資訊管理 Nav -->
+
+<!--         <li class="nav-item"> -->
+<!--             <a class="nav-link collapsed" href="#"> -->
+<!--                 <img src="../../common/img/headset-solid.svg" alt=""></i> -->
+<!--                 <span>線上客服管理</span> -->
+<!--             </a> -->
+<!--         </li> -->
+        <!-- End 線上客服管理 Nav -->
+    </ul>
+</aside>
+<!-- End Sidebar-->
+
+    <main id="main" class="main">
+
+        <!--職缺刊登方案-->
+
+
+        <!--職缺刊登方案新增頁面-->
+        <div class="pagetitle">
+            <h1>技能規格新增頁面</h1>
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="Employee.html">Home</a></li>
+                    <li class="breadcrumb-item active">職缺管理</li>
+                    <li class="breadcrumb-item active">技能規格管理</li>
+                    <li class="breadcrumb-item active">技能新增頁面</li>
+                </ol>
+            </nav>
+        </div>
+        <form action="/skill" method="post">
+            <div class="row">
+                <div class="col-lg-2 mb-3">
+                    <label for="schemeNumber" class="form-label" name="PT_TYPE">技能分類</label>
+                </div>
+                <div class="col-lg-4">
+                    <input type="text" class="form-control align-items-center" name="skType" id="schemeNumber">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-2 mb-3">
+                    <label for="schemeNumber" class="form-label" >技能名稱</label>
+                </div>
+                <div class="col-lg-4">
+                    <input type="text" class="form-control" id="schemeNumber" name="skName">
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-2">
+                    <button type="submit" class="btn btn-primary">新增</button>
+                </div>
+            </div>
+        </form>
+    </main>
+    <!-- End #main -->
+
+    <!-- Vendor JS Files -->
+    <!-- 首頁sidebar下拉 -->
+    <script src="./packageJS/bootstrap.bundle.min.js"></script>
+
+
+    <!-- Template Main JS File -->
+    <script src="./js/Employee.js"></script>
+
+    <script src="./vendors/jquery/jquery-3.6.4.min.js"></script>
+
+    <!--fontawesome-->
+    <script src="https://kit.fontawesome.com/244879c400.js" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

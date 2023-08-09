@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <title>Seeker's Pool 檢舉內容檢查及編輯</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="./img/favicon.png" rel="icon">
+    <link href="./img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="./packageCSS/bootstrap.min.css" rel="stylesheet">
+    <link href="./packageCSS/bootstrap-icons.css" rel="stylesheet">
+    <link href="./packageCSS/boxicons.min.css" rel="stylesheet">
+    <link href="./packageCSS/quill.snow.css" rel="stylesheet">
+    <link href="./packageCSS/quill.bubble.css" rel="stylesheet">
+    <link href="./packageCSS/remixicon.css" rel="stylesheet">
+    <link href="./packageCSS/style.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="./css/Employee.css" rel="stylesheet">
+
+    <!-- Font Awesome-->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> -->
+    <script src="https://kit.fontawesome.com/244879c400.js" crossorigin="anonymous"></script>
+
+    <!-- =======================================================
+  * Template Name: NiceAdmin
+  * Updated: Mar 09 2023 with Bootstrap v5.2.3
+  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+
+    <link href="css/lightbox.css" rel="stylesheet" />
+
+
+    <style>
+        .report-img {
+            border: 1px solid black;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .report-img-file {
+            max-width: 450px;
+            max-height: 450px;
+            overflow: auto;
+        }
+
+        .report-img-file img {
+            width: 100%;
+            /* 圖片寬度為父容器的的百分之百 */
+            height: auto;
+            /* 根據比例自動計算圖片高度 */
+        }
+
+        .mb-3 {
+            display: flex;
+            justify-content: center;
+            /* 水平置中 */
+            align-items: center;
+            /* 垂直置中 */
+        }
+
+        .form-label {
+            font-weight: bold;
+        }
+        .col-lg-2 {
+            display: flex;
+            justify-content: center;
+            /* 水平置中 */
+            align-items: center;
+            /* 垂直置中 */
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ========================== Header ================================ -->
+<header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex flex-row align-items-center justify-content-between" style="margin-bottom: -10px;">
+        <a href="Employee.html" class="logo d-flex align-items-center">
+            <img src="../../common/img/handshake-regular.svg" alt="" style="margin-right: 10px;">
+            <span class="d-none d-lg-block">
+                <h5 style="margin-bottom: 0px;"><a href="../administrator/administratorhome.html">Seeker's P<i
+                            class="fa-regular fa-face-smile"></i><i class="fa-regular fa-face-smile"></i>L
+                    </a></h5>
+            </span>
+        </a>
+        <img src="../../common/img/bars-solid.svg" class="toggle-sidebar-btn" alt="">
+    </div>
+    <!-- End Logo -->
+
+    <nav class="header-nav ms-auto">
+        <ul class="d-flex flex-row-reverse align-items-center">
+            <li class="nav-item pe-6">
+`				
+                <a class="profile-photo nav-profile d-flex align-items-center" href="#" style=" transform: translate(-90px, -15px);">
+<!--                     <img src="../../common/img/happy-quokka.jpg" alt="Profile" class="rounded-circle"> -->
+                    <span>Hi </span><span id="name"class="d-none d-md-block ps-2"></span>
+                </a>
+                
+                <!-- End 員工頭像 -->
+            </li>
+            <li>
+             	<a id="out"class="dropdown-item d-flex p-6 align-items-center" href="#" style=" transform: translate(40px, -2px);">
+                    <img src="../../common/img/right-from-bracket-solid.svg" alt=""><span id="out">登出</span>
+                </a>
+            </li>
+            <!-- End Profile Nav -->
+        </ul>
+    </nav>
+    <!-- End Icons Navigation -->
+</header>
+<!-- End Header -->
+
+    <!-- ========================= Sidebar ============================== -->
+<aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+        <li class="nav-item">
+            <a class="nav-link " href="../administrator/administratorhome.html">
+                <img src="../../common/img/house-solid.svg" alt="">
+                <span>Home</span>
+            </a>
+        </li>
+        <!-- End Dashboard Nav -->
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="../administrator/administrator.html">
+                <img src="../../common/img/user-regular.svg" alt=""><span>員工管理</span>
+<!--                 <img src="../../common/img/angle-down-solid.svg" -->
+<!--                     class="angle-down-solid ms-auto" alt=""> -->
+            </a>
+<!--             <ul id="administrator-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav"> -->
+<!--                 <li> -->
+<!--                     <a href="../administrator/administrator.html"> -->
+<!--                         <img src="../../common/img/circle-regular.svg" alt=""><span>員工資料管理</span> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                 <li> -->
+<!--                     <a href="../administrator/administratorauthority.html"> -->
+<!--                         <img src="../../common/img/circle-regular.svg" alt=""><span>員工權限管理</span> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                 <li> -->
+<!--                     <a href="./administratorlecturer.html"> -->
+<!--                         <img src="../../common/img/circle-regular.svg" alt=""><span>講師管理</span> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--             </ul> -->
+        </li>
+        <!-- End 員工管理 Nav -->
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="../companymember/allCompany.html">
+                <img src="../../common/img/address-card-regular.svg" alt=""><span>企業會員管理</span>
+<!--                 <img src="../../common/img/angle-down-solid.svg" -->
+<!--                     class="angle-down-solid ms-auto" alt=""> -->
+            </a>
+<!--             <ul id="member-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav"> -->
+<!--                 <li> -->
+<!--                     <a href="#"> -->
+<!--                         <img src="../../common/img/circle-regular.svg" alt=""><span>一般會員管理</span> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                 <li> -->
+<!--                     <a href="#"> -->
+<!--                         <img src="../../common/img/circle-regular.svg" alt=""><span>企業會員管理</span> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--             </ul> -->
+        </li>
+        <!-- End 會員管理 Nav -->
+
+<!--         <li class="nav-item"> -->
+<!--             <a class="nav-link collapsed" data-bs-target="#lecturer-nav" data-bs-toggle="collapse" href="#"> -->
+<!--                 <img src="../../common/img/user-tie-solid.svg" alt=""><span>講師專區</span><img src="../../common/img/angle-down-solid.svg" -->
+<!--                     class="angle-down-solid ms-auto" alt=""> -->
+<!--             </a> -->
+<!--             <ul id="lecturer-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav"> -->
+<!--                 <li> -->
+<!--                     <a href="#"> -->
+<!--                         <img src="../../common/img/circle-regular.svg" alt=""><span>講師總覽</span> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                 <li> -->
+<!--                     <a href="#"> -->
+<!--                         <img src="../../common/img/circle-regular.svg" alt=""><span>留言區回覆</span> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--             </ul> -->
+<!--         </li> -->
+        <!-- End 講師專區 Nav -->
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#job-nav" data-bs-toggle="collapse" href="#">
+                <img src="../../common/img/briefcase-solid.svg" alt=""></i><span>職缺管理</span><img src="../../common/img/angle-down-solid.svg"
+                    class="angle-down-solid ms-auto" alt="">
+            </a>
+            <ul id="job-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                <li>
+                    <a href="../job/JobType.html">
+                        <img src="../../common/img/circle-regular.svg" alt=""><span>職務規格維護</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../job/JobSkill.html">
+                        <img src="../../common/img/circle-regular.svg" alt=""><span>技能規格維護</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../report/JobReportShow.html">
+                        <img src="../../common/img/circle-regular.svg" alt=""><span>審核管理</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <!-- End 職缺管理 Nav -->
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#job-case-nav" data-bs-toggle="collapse" href="#">
+                <img src="../../common/img/rectangle-ad-solid.svg" alt=""><span>職缺刊登方案管理</span><img
+                    src="../../common/img/angle-down-solid.svg" class="angle-down-solid ms-auto" alt="">
+            </a>
+            <ul id="job-case-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                <li>
+                    <a href="../jobcase/jobcase.html">
+                        <img src="../../common/img/circle-regular.svg" alt=""><span>職缺刊登方案</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../jobcase/jobcaseorder.html">
+                        <img src="../../common/img/circle-regular.svg" alt=""><span>職缺刊登訂單管理</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <!-- End 職缺刊登方案管理 Nav -->
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#online-course-nav" data-bs-toggle="collapse" href="#">
+                <img src="../../common/img/circle-play-regular.svg" alt=""></i><span>線上訓練課程管理</span><img
+                    src="../../common/img/angle-down-solid.svg" class="angle-down-solid ms-auto" alt="">
+            </a>
+            <ul id="online-course-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                <li>
+                    <a href="./CourseManagement.html">
+                        <img src="../../common/img/circle-regular.svg" alt=""><span>線上課程管理</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="./CourseAdd.html">
+                        <img src="../../common/img/circle-regular.svg" alt=""><span>課程訂單管理</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <!-- End 線上訓練課程管理 Nav -->
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#job-fair-nav" data-bs-toggle="collapse" href="#">
+                <img src="../../common/img/lightbulb-regular.svg" alt=""></i><span>徵才博覽會管理</span><img
+                    src="../../common/img/angle-down-solid.svg" class="angle-down-solid ms-auto" alt="">
+            </a>
+            <ul id="job-fair-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                <li>
+                    <a href="../jobfair/jfback/job_fair.html">
+                        <img src="../../common/img/circle-regular.svg" alt=""><span>活動管理</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../jobfair/jfback/Exhibitor.html">
+                        <img src="../../common/img/circle-regular.svg" alt=""><span>參展企業管理</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <!-- End 徵才博覽會管理 Nav -->
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="../jobfair/jfback/job_fair_article.html">
+                <img src="../../common/img/newspaper-regular.svg" alt=""><span>徵才活動文章管理</span>
+<!--                 <img src="../../common/img/angle-down-solid.svg" -->
+<!--                     class="angle-down-solid ms-auto" alt=""> -->
+            </a>
+<!--             <ul id="article-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav"> -->
+<!--                 <li> -->
+<!--                     <a href="#"> -->
+<!--                         <img src="../../common/img/circle-regular.svg" alt=""><span>徵才活動文章</span> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                 <li> -->
+<!--                     <a href="#"> -->
+<!--                         <img src="../../common/img/circle-regular.svg" alt=""><span>審核被檢舉文章</span> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--             </ul> -->
+        </li>
+        <!-- End 文章專區管理 Nav -->
+
+<!--         <li class="nav-item"> -->
+<!--             <a class="nav-link collapsed" data-bs-target="#scheduler-nav" data-bs-toggle="collapse" href="#"> -->
+<!--                 <img src="../../common/img/calendar-days-regular.svg" alt=""><span>排程器管理</span><img -->
+<!--                     src="../../common/img/angle-down-solid.svg" class="angle-down-solid ms-auto" alt=""> -->
+<!--             </a> -->
+<!--             <ul id="scheduler-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav"> -->
+<!--                 <li> -->
+<!--                     <a href="#"> -->
+<!--                         <img src="../../common/img/circle-regular.svg" alt=""><span>熱門職務&技能</span> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--             </ul> -->
+<!--         </li> -->
+        <!-- End 排程器管理 Nav -->
+
+<!--         <li class="nav-item"> -->
+<!--             <a class="nav-link collapsed" data-bs-target="#info-nav" data-bs-toggle="collapse" href="#"> -->
+<!--                 <img src="../../common/img/circle-question-regular.svg" alt=""></i><span>前台資訊管理</span><img -->
+<!--                     src="../../common/img/angle-down-solid.svg" class="angle-down-solid ms-auto" alt=""> -->
+<!--             </a> -->
+<!--             <ul id="info-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav"> -->
+<!--                 <li> -->
+<!--                     <a href="#"> -->
+<!--                         <img src="../../common/img/circle-regular.svg" alt=""><span>最新消息管理</span> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                 <li> -->
+<!--                     <a href="#"> -->
+<!--                         <img src="../../common/img/circle-regular.svg" alt=""><span>電子報管理</span> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                 <li> -->
+<!--                     <a href="#"> -->
+<!--                         <img src="../../common/img/circle-regular.svg" alt=""><span>FAQ管理</span> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--             </ul> -->
+<!--         </li> -->
+        <!-- End 前台資訊管理 Nav -->
+
+<!--         <li class="nav-item"> -->
+<!--             <a class="nav-link collapsed" href="#"> -->
+<!--                 <img src="../../common/img/headset-solid.svg" alt=""></i> -->
+<!--                 <span>線上客服管理</span> -->
+<!--             </a> -->
+<!--         </li> -->
+        <!-- End 線上客服管理 Nav -->
+    </ul>
+</aside>
+<!-- End Sidebar-->
+
+    <main id="main" class="main">
+
+        <!--職缺刊登方案-->
+
+
+        <!--職缺刊登方案新增頁面-->
+        <div class="pagetitle">
+            <h1>檢舉內容頁面</h1>
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="Employee.html">Home</a></li>
+                    <li class="breadcrumb-item active">職缺管理</li>
+                    <li class="breadcrumb-item active">審核管理</li>
+                    <li class="breadcrumb-item active">檢舉內容</li>
+                </ol>
+            </nav>
+        </div>
+        <form action="/data" method="PUT" class="form">
+
+            <div class="row">
+                <div class="col-lg-2 mb-3">
+                    <label for="schemeNumber" class="form-label">檢舉單號</label>
+                </div>
+                <div class="col-lg-4">
+                    <input type="text" class="form-control align-items-center reNo" name="reNo" id="schemeNumber"
+                        readonly>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-2 mb-3">
+                    <label for="schemeNumber" class="form-label">帳號名稱</label>
+                </div>
+                <div class="col-lg-4">
+                    <input type="text" class="form-control align-items-center memId" name="memId" id="schemeNumber"
+                        readonly>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-2 mb-3">
+                    <label for="schemeNumber" class="form-label">企業名稱</label>
+                </div>
+                <div class="col-lg-4">
+                    <input type="text" class="form-control comMemId" id="schemeNumber" name="comMemId" readonly>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-2 mb-3">
+                    <label for="schemeNumber" class="form-label">檢舉類別</label>
+                </div>
+                <div class="col-lg-4">
+                    <input name="" id="" cols="30" rows="10" type="text" name="rjtNo" class="form-control rjtNo"
+                        id="schemeNumber" readonly></input>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-2 mb-3">
+                    <label for="schemeNumber" class="form-label">檢舉內容</label>
+                </div>
+                <div class="col-lg-4">
+
+                    <textarea name="" id="" cols="30" rows="10" type="text" name="reContent"
+                        class="form-control reContent" id="schemeNumber" readonly></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-2 mb-3">
+                    <label for="schemeNumber" class="form-label">檢舉佐證</label>
+                </div>
+                <div class="col-lg-4 report-img-file">
+                    <a href="" class="reUpload-a" data-lightbox="*">
+                        <img src="" alt="找不到圖片404" class="report-img reUpload" name="reUpload">
+                    </a>
+
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-2 mb-3">
+                    <label for="schemeNumber" class="form-label">審核狀態</label>
+                </div>
+                <div class="col-lg-4">
+
+                    <select name="reStatus" class="form-control reStatus" id="schemeNumber">
+                        <option value="" selected disabled>請選擇</option>
+                        <option value="0">未處理</option>
+                        <option value="1">已處理</option>
+                        <option value="2">未審核</option>
+                    </select>
+
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-2 mb-3">
+                    <label for="schemeNumber" class="form-label">處理結果</label>
+                </div>
+                <div class="col-lg-4">
+                    <select name="reResult" class="form-control reResult" id="schemeNumber">
+                        <option value="" selected disabled>請選擇</option>
+                        <option value="0">未通過</option>
+                        <option value="1">已通過</option>
+                        <option value="2">未審核</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-2">
+                    <button type="button" class="btn btn-primary updatebutton">確認修改</button>
+                </div>
+            </div>
+        </form>
+    </main>
+    <!-- End #main -->
+
+    <!-- Vendor JS Files -->
+    <!-- 首頁sidebar下拉 -->
+    <script src="./packageJS/bootstrap.bundle.min.js"></script>
+    <!-- Template Main JS File -->
+    <script src="./js/Employee.js"></script>
+    <script src="./vendors/jquery/jquery-3.6.4.min.js"></script>
+    <script src="js/lightbox.js"></script>
+    <!--fontawesome-->
+    <script src="https://kit.fontawesome.com/244879c400.js" crossorigin="anonymous"></script>
+
+    <script>
+
+        $(document).ready(function () {
+
+            let url = window.location.href;
+            let reNoUrl = url.match(/reNo=(\d+)/);
+
+            if (reNoUrl && reNoUrl[1]) {
+                // 提取 reNo 的值
+                let reNoValue = reNoUrl[1];
+                // AJAX请求
+                $.ajax({
+                    url: '/report/data/edit',
+                    type: 'GET',
+                    data: { reNo: reNoValue },  // 替換為要查詢的reNo值
+                    success: function (data) {
+                        // 將資料填入網頁的input和textarea欄位
+                        let rjtNoStr;
+
+                        if (data[0].rjt_no === 1) {
+                            rjtNoStr = '網路相關問題';
+                        } else {
+                            rjtNoStr = '公司面試、職場相關問題';
+                        }
+                        $('.reNo').val(data[0].re_no);
+                        $('.memId').val(data[0].mem_account);
+                        $('.comMemId').val(data[0].com_name);
+                        $('.rjtNo').val(rjtNoStr);
+                        $('.reContent').val(data[0].re_content);
+                        $('.reUpload').attr('src', '/webapp/' + data[0].re_upload + "?" + Date.now());
+                        $('.reUpload-a').attr('href', '/webapp/' + data[0].re_upload + "?" + Date.now());
+                    },
+                    error: function (xhr, status, error) {
+                        console.log('AJAX Error:', status, error);
+                    }
+                });
+            } else {
+                console.log('未找到 reNo 的值');
+            }
+        });
+    </script>
+
+    <script>
+
+        let url = window.location.href;
+        let reNoUrl = url.match(/reNo=(\d+)/);
+        let reNoValue = parseInt(reNoUrl[1]);
+
+
+        $('.updatebutton').on('click', function () {
+
+            let reResult = parseInt($('.reResult').val());
+            let reStatus = parseInt($('.reStatus').val());
+
+            let data = {reResult: reResult,
+                        reStatus: reStatus};
+
+            let jsondata = JSON.stringify(data);
+
+            if (isNaN(reStatus)) {
+                alert('請選擇審核狀態');
+            }
+
+            if (isNaN(reResult)) {
+                alert('請選擇處理結果');
+            }
+
+            if(!(isNaN(reStatus) && isNaN(reResult))){
+                $.ajax({
+                    url: '/report/data/' + reNoValue,
+                    type: 'PATCH',
+                    contentType: "application/json",
+                    dataType: "json",
+                    data: jsondata,
+                    success: function (response) {
+
+                        setTimeout(function (){
+                            alert(response);
+                            window.location.href = "JobReportShow.html"
+                        },1000);
+                    },
+                    error: function (xhr, status, error) {
+                        console.log('AJAX Error:', status, error);
+                        console.log(("跑到失敗了"));
+                    }
+                })
+            }
+        });
+
+    </script>
+
+    <script>
+        lightbox.option({
+            'resizeDuration': 200,
+            'wrapAround': true
+        })
+
+
+
+
+    </script>
+</body>
+
+</html>
