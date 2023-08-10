@@ -1,14 +1,11 @@
 package com.example.seekerpool_springboot.marc.controller;
 
 import com.example.seekerpool_springboot.marc.service.ReportCrudService;
-import com.example.seekerpool_springboot.marc.vo.ReportEnterpriseVo;
 import com.google.gson.Gson;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/report")
@@ -26,8 +23,7 @@ public class ReportCrudController {
 
     @PostMapping("/data/number")
     public String selectReportNumber(@RequestParam Integer reNo){
-        String json = gson.toJson(reportCrudService.getReportByNumber(reNo));
-        return json;
+        return gson.toJson(reportCrudService.getReportByNumber(reNo));
     }
 
     @PostMapping("/data/result")

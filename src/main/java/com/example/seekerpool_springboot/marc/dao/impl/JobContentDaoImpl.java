@@ -20,7 +20,6 @@ public class JobContentDaoImpl implements JobContentDao {
 
     @Autowired
     private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
-
     @Autowired
     private JdbcTemplate jdbcTemplate;
 

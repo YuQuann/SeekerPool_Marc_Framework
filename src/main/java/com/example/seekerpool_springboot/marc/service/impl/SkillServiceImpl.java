@@ -5,9 +5,7 @@ import com.example.seekerpool_springboot.marc.service.SkillService;
 import com.example.seekerpool_springboot.marc.vo.SkillTypeVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 
 @Service

@@ -98,11 +98,8 @@ public class JobContentServiceImpl implements JobContentService {
         // 宣告未來存放上傳圖片的資料夾路徑
         // File.separator用於在路徑中分隔目錄和文件名稱。
         // uploadImage是自訂上傳資料夾的名稱，可以看需求更名
-        //之後再想辦法處理可否使用相對路徑找出src裡的路徑
-        String projectRoute = System.getProperty("user.dir"); // C:\Git_Project\SeekerPool_SpringBoot
-        String imageFolder = "/src/main/resources/static/webapp";
-        String uploadPath = projectRoute + imageFolder + "/uploadImage";
-
+        String projectRoute = System.getProperty("user.dir");
+        String uploadPath = projectRoute + "/target/classes/static/webapp/uploadImage";
 
         // 儲存檔案至uploadImage資料夾並判斷資料夾是否存在
         File uploadDir = new File(uploadPath);
@@ -133,7 +130,7 @@ public class JobContentServiceImpl implements JobContentService {
         vo.setMemId(memId);
         vo.setReUpload(reUploadStr);
 
-        if (jobContentDao.addReport(vo) == "true"){
+        if (jobContentDao.addReport(vo).equals("true")){
             return "true";
         }else {
             return "false";

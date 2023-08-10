@@ -2,13 +2,11 @@ package com.example.seekerpool_springboot.marc.service.impl;
 
 import com.example.seekerpool_springboot.marc.dao.ReportRepository;
 import com.example.seekerpool_springboot.marc.service.ReportCrudService;
-import com.example.seekerpool_springboot.marc.vo.ReportEnterpriseVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
+
 
 @Service
 public class ReportCrudServiceImpl implements ReportCrudService {
