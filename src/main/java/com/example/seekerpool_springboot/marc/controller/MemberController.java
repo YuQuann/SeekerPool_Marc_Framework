@@ -23,8 +23,8 @@ public class MemberController {
     private Gson gson;
 
     @PostMapping("/memberLogin")
-    public List<MemberVo> memberLogin(@RequestParam String memAccount,
-                                      @RequestParam String memPassword){
+    public Boolean memberLogin(@RequestParam String memAccount,
+                               @RequestParam String memPassword){
 
         return memberService.memberLogin(memAccount,memPassword);
     }

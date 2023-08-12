@@ -67,7 +67,7 @@
                 method: "POST",
                 data: data,
                 success: function (data){
-                    if (data !== null && data.length !== 0){
+                    if (data){
                         location.href = "../job/JobSearchResult.html";
                     }else{
                         alert("帳號密碼不存在或錯誤");

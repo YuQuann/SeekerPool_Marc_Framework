@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface MemberService {
 
-    List<MemberVo> memberLogin(String memAccount, String memPassword);
+    Boolean memberLogin(String memAccount, String memPassword);
 
 }
