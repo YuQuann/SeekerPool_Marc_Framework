@@ -22,3 +22,5 @@
 後端部分：Java、SpringBoot、Spring MVC、Spring Data JPA、JDBC
 
 資料庫部分：MYSQL  
+
+# 功能會持續修改並增加中
