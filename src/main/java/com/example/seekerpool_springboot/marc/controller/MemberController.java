@@ -1,14 +1,11 @@
 package com.example.seekerpool_springboot.marc.controller;
 
 import com.example.seekerpool_springboot.marc.service.MemberService;
-import com.example.seekerpool_springboot.marc.vo.MemberVo;
 import com.google.gson.Gson;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 @RestController
