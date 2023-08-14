@@ -19,6 +19,6 @@
 
 前端部分：HTML、JQuery、AJAX、JavaScript、CSS  
 
-後端部分：Java、SpringBoot、Spring MVC、Spring Data JPA  
+後端部分：Java、SpringBoot、Spring MVC、Spring Data JPA、JDBC
 
 資料庫部分：MYSQL  
