@@ -1,6 +1,6 @@
 # SeekerPool_Marc_Framework
 張宇謙(Marc Chang) 專案作品(SpringBoot框架)
-
+# 功能會持續修改並增加中
 # 專案簡介：
 一個簡易的求職網站，提供求職者求職，求才者求才。
 
@@ -23,4 +23,4 @@
 
 資料庫部分：MYSQL  
 
-# 功能會持續修改並增加中
+
