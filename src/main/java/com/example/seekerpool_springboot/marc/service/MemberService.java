@@ -8,4 +8,6 @@ public interface MemberService {
 
     Boolean memberLogin(String memAccount, String memPassword);
 
+    Boolean registerMember(MemberVo memberVo);
+
 }

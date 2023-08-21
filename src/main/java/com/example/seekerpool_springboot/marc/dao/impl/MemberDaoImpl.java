@@ -27,4 +27,28 @@ public class MemberDaoImpl implements MemberDao {
 
         return namedParameterJdbcTemplate.query(sql,map,new MemberMapper());
     }
+
+    @Override
+    public Boolean registerMember(MemberVo vo) {
+
+        String sql = "INSERT INTO member (mem_address,mem_name,mem_gender,mem_pic,mem_email,mem_mobile,mem_account,mem_password) " +
+                "VALUES (:memAddress,:memName,:memGender,:memPic,:memEmail,:memMobile,:memAccount,:memPassword);";
+
+        Map<String,Object> map = new HashMap<>();
+        map.put("memAddress",vo.getMemAddress());
+        map.put("memName",vo.getMemName());
+        map.put("memGender",vo.getMemGender());
+        map.put("memPic",vo.getMemPic());
+        map.put("memEmail",vo.getMemEmail());
+        map.put("memMobile",vo.getMemMobile());
+        map.put("memAccount",vo.getMemAccount());
+        map.put("memPassword",vo.getMemPassword());
+
+
+        if (namedParameterJdbcTemplate.update(sql,map) == 1){
+            return true;
+        }else {
+            return false;
+        }
+    }
 }

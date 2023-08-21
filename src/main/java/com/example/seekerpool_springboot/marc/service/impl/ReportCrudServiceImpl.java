@@ -1,6 +1,6 @@
 package com.example.seekerpool_springboot.marc.service.impl;
 
-import com.example.seekerpool_springboot.marc.dao.ReportRepository;
+import com.example.seekerpool_springboot.marc.repository.ReportRepository;
 import com.example.seekerpool_springboot.marc.service.ReportCrudService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

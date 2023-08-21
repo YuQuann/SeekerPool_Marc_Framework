@@ -28,24 +28,21 @@ public class JobController {
     private HttpSession session;
 
     @PostMapping("/resultSearch")
-    public String ResultSearch(@RequestBody Map<String, String> request) {
-
+    public List<JobVo> ResultSearch(@RequestBody Map<String, String> request) {
         String keyword = request.get("keyword");
         String city = request.get("city");
         String town = request.get("town");
-
-        List<JobVo> list = jobResultSearchService.searchResult(keyword, city, town);
-        return gson.toJson(list);
+        return jobResultSearchService.searchResult(keyword, city, town);
     }
 
-    @GetMapping("/showContent")
-    public String showJobContent(@RequestParam int jobNo) {
-        List<Map<String, Object>> list = jobContentService.showJobContent(jobNo);
-        return gson.toJson(list);
+    @GetMapping("/content")
+    public List<Map<String, Object>> showJobContent(@RequestParam int jobNo) {
+        return jobContentService.showJobContent(jobNo);
     }
 
     @PostMapping("/resumeJob")
-    public Map<String, String> resumeJob(@RequestParam("jobNo") int jobNo, @RequestParam("comMemId") int comMemId) {
+    public Map<String, String> resumeJob(@RequestParam("jobNo") int jobNo,
+                                         @RequestParam("comMemId") int comMemId) {
 
         Map<String, String> map = new HashMap<>();
         //該區塊作登入確認的判斷
@@ -100,7 +97,7 @@ public class JobController {
         //有使用攔截器攔截未登入的使用者
         int memId = (int) session.getAttribute("memId");
 
-        if (jobContentService.addReport(jobNo, comMemId, memId, rjtNo, reContent, reUpload).equals("true")) {
+        if (jobContentService.addReport(jobNo, comMemId, memId, rjtNo, reContent, reUpload)) {
             return "true";
         } else {
             return "false";

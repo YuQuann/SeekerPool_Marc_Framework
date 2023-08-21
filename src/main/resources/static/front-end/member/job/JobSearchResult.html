@@ -491,7 +491,7 @@
                 method: "GET",
                 dataType: "json",
                 success: function (data) {
-                    if (data.loginInfo === "false"){
+                    if (data.loginInfo === false){
                         window.location.href = '/front-end/member/member/memberlogin.html';
                     }
                 },error: function (xhr, status, error) {

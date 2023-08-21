@@ -85,7 +85,7 @@ public class JobContentServiceImpl implements JobContentService {
     }
 
     @Override
-    public String addReport(int jobNo, int comMemId, int memId, int rjtNo, String reContent, MultipartFile reUpload)
+    public Boolean addReport(int jobNo, int comMemId, int memId, int rjtNo, String reContent, MultipartFile reUpload)
             throws IOException {
 
         /*
@@ -131,9 +131,9 @@ public class JobContentServiceImpl implements JobContentService {
         vo.setReUpload(reUploadStr);
 
         if (jobContentDao.addReport(vo).equals("true")){
-            return "true";
+            return true;
         }else {
-            return "false";
+            return false;
         }
     }
 

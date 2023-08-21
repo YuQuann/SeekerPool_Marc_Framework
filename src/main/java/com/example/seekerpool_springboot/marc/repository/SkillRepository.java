@@ -1,4 +1,4 @@
-package com.example.seekerpool_springboot.marc.dao;
+package com.example.seekerpool_springboot.marc.repository;
 
 import com.example.seekerpool_springboot.marc.vo.SkillTypeVo;
 import org.springframework.data.jpa.repository.JpaRepository;

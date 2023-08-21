@@ -1,7 +1,6 @@
-package com.example.seekerpool_springboot.marc.dao;
+package com.example.seekerpool_springboot.marc.repository;
 
 import com.example.seekerpool_springboot.marc.vo.ReportEnterpriseVo;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;

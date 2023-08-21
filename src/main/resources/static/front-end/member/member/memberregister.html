@@ -25,7 +25,6 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
 
     <script>
-        let projectName = window.location.pathname.split('/')[1]; // SeekerPool
 
         $(function () {
 
@@ -52,15 +51,14 @@
 
             $("#registerForm").submit(function () {
                 var formData = new FormData($("#registerForm")[0]);//構造FormData物件
+
                 if (flag) { //密碼一致才能送出
                     $.ajax({
-                        url: "/" + projectName + "/MemberRegisterServlet",//接受請求的Servlet地址
+                        url: "/member/register",
                         type: 'POST',
                         data: formData,
-                        async: false,//同步請求
-                        cache: false,//不快取頁面
-                        contentType: false,//當form以multipart/form-data方式上傳檔案時，需要設定為false
-                        processData: false,//如果要傳送Dom樹資訊或其他不需要轉換的資訊，請設定為false
+                        contentType: false,
+                        processData: false,
                         success: function (data) {
                             var data = JSON.parse(data);
                             if (data.flag) {
@@ -109,7 +107,7 @@
 
                     <div class="rg_form_center">
                         <!--註冊表單-->
-                        <form id="registerForm" method="post" enctype="multipart/form-data">
+                        <form id="registerForm" method="POST" enctype="multipart/form-data">
                             <!--提交請求表單標示符號-->
                             <input type="hidden" name="action" value="register">
 

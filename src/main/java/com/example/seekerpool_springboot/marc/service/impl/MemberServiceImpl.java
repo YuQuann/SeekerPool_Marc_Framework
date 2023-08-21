@@ -31,4 +31,17 @@ public class MemberServiceImpl implements MemberService {
         }
         return true;
     }
+
+    @Override
+    public Boolean registerMember(MemberVo memberVo) {
+
+        Boolean flag = memberDao.registerMember(memberVo);
+        if (flag){
+            //新增成功
+            return true;
+        }else {
+            //新增失敗
+            return false;
+        }
+    }
 }

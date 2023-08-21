@@ -1,6 +1,6 @@
 package com.example.seekerpool_springboot.marc.service.impl;
 
-import com.example.seekerpool_springboot.marc.dao.SkillRepository;
+import com.example.seekerpool_springboot.marc.repository.SkillRepository;
 import com.example.seekerpool_springboot.marc.service.SkillService;
 import com.example.seekerpool_springboot.marc.vo.SkillTypeVo;
 import org.springframework.beans.factory.annotation.Autowired;

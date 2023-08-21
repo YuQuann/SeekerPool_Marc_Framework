@@ -1,6 +1,5 @@
 package com.example.seekerpool_springboot.marc.service;
 
-import jakarta.servlet.http.Part;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -21,6 +20,6 @@ public interface JobContentService {
 
     Boolean collectJobCheck(int memId,int jobNo);
 
-    String addReport(int jobNo, int comMemId, int memId, int rjtNo, String reContent, MultipartFile reUpload) throws IOException;
+    Boolean addReport(int jobNo, int comMemId, int memId, int rjtNo, String reContent, MultipartFile reUpload) throws IOException;
 
 }

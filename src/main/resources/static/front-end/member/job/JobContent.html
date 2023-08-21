@@ -195,7 +195,7 @@
             }
 
             $.ajax({
-                url: "/job/showContent",
+                url: "/job/content",
                 type: "GET",
                 data: data,
                 dataType: "json",
@@ -223,7 +223,7 @@
                     imgBlock.appendTo(imgblock);
 
                     $("<h1>", { class: "jobName", name: "jobName", text: data[0].jobName }).appendTo(jobTitle);
-                    $("<a>", { href: "companyProfile.html?comMemId=" + item[0].comMemId, class: "company comName", name: "comName", text: data.comName }).appendTo(jobTitle);
+                    $("<a>", { href: "companyProfile.html?comMemId=" + item[0].comMemId, class: "company comName", name: "comName", text: item[0].comName }).appendTo(jobTitle);
 
 
                     // var jobBody = $("<div>", { class: "job-body" }).appendTo(container);
@@ -270,7 +270,7 @@
                 method: "GET",
                 dataType: "json",
                 success: function (data) {
-                    if (data.loginInfo === "false"){
+                    if (data.loginInfo === false){
                         window.location.href = '/front-end/member/member/memberlogin.html';
                     }
                 },error: function (xhr, status, error) {
