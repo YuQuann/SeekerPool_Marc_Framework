@@ -10,4 +10,8 @@ public interface MemberService {
 
     Boolean registerMember(MemberVo memberVo);
 
+    void sendMail(String email,String memName,String memAccount);
+
+    List<MemberVo> getMemberByAccount(String memAccount);
+
 }

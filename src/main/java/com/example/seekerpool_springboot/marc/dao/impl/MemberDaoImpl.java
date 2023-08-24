@@ -51,4 +51,15 @@ public class MemberDaoImpl implements MemberDao {
             return false;
         }
     }
+    @Override
+    public List<MemberVo> getMemberByAccount(String memAccount){
+
+        String sql = "SELECT * FROM member where mem_account = :memAccount ;";
+
+        Map<String,Object> map = new HashMap<>();
+        map.put("memAccount",memAccount);
+
+        return namedParameterJdbcTemplate.query(sql,map,new MemberMapper());
+
+    }
 }

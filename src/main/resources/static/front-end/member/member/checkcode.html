@@ -24,16 +24,13 @@
 
     <script>
 
-        let projectName = window.location.pathname.split('/')[1]; // SeekerPool
-
         //按鈕跑出來
         function butshow() {
             $("#resendButton").removeAttr("style");
         }
 
-        //去servlet發送郵件
         function sendCheckMail() {
-            $.post('/' + projectName + '/MemberCheckCodeServlet', {}, function () {
+            $.post('/member/sendMail', {}, function () {
                 // alert("寄信成功")
             });
             // location.reload();  不能reloading，可能會導致瀏覽器(火狐)抓快取資料然後就不會去執行servlet裡面的事情，火狐會出現NS_BINDING_ABORTED 錯誤，所以要小心使用location.reload();
@@ -43,15 +40,25 @@
             setTimeout(butshow, 10000);
         }
 
-        $(function () {
+        function checkMemberCode() {
             //10秒後出現重新寄信按鈕
             setTimeout(butshow, 10000);
+        }
+
+        window.onload = function(){
+            sendCheckMail();
+            checkMemberCode();
 
             //發送輸入的驗證碼到後端驗證
-            $("#chekcCodeForm").submit(function () {
+            $(".check").click(function () {
+
+                let checkCodeVal = $(".checkCode").val();
+                let codeData = {checkCode:checkCodeVal};
+                console.log("checkCode : " + codeData.checkCode)
+
                 //發送數據到服務器
-                $.post("/" + projectName + "/MemberCheckCodeServlet", $(this).serialize(), function (data) {
-                    var data = JSON.parse(data);
+                $.post("/member/checkMemberCode", codeData, function (data) {
+                    // var data = JSON.parse(data);
                     if (data.flag) {
                         //驗證成功，跳轉到成功頁面
                         location.href = "memberinfo.html";
@@ -60,9 +67,9 @@
                         alert(data.msg)
                     }
                 });
-                return false; //返回true才會送出表單
             });
-        })
+
+        }
     </script>
 
 </head>
@@ -97,11 +104,11 @@
 
                                     <!-- 表單區 -->
                                     <form class="text-center" id="chekcCodeForm">
-                                        <div class="mb-3"><input class="form-control" type="text" name="checkCode"
+                                        <div class="mb-3"><input class="form-control checkCode" type="text" name="checkCode"
                                                 placeholder="驗證碼" required /></div>
 
-                                        <div class="mb-3"><button class="btn btn-primary d-block w-100"
-                                                type="submit">確認</button></div>
+                                        <div class="mb-3"><button class="btn btn-primary d-block w-100 check"
+                                                type="button">確認</button></div>
 
                                     </form>
 

@@ -9,4 +9,6 @@ public interface MemberDao {
     List<MemberVo> memberLogin(String memAccount, String memPassword);
 
     Boolean registerMember(MemberVo vo);
+
+    List<MemberVo> getMemberByAccount(String memAccount);
 }

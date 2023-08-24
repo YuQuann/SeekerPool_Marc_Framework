@@ -60,14 +60,12 @@
                         contentType: false,
                         processData: false,
                         success: function (data) {
-                            var data = JSON.parse(data);
+                            // var data = JSON.parse(data);
                             if (data.flag) {
                                 //寄驗證信
-                                $.post("/" + projectName + "/MemberCheckCodeServlet", {}, function () {
-                                    //有開多執行續，邊跳轉頁面邊寄信
-                                    //註冊成功，跳轉到成功頁面
-                                    location.href = "checkcode.html";
-                                });
+                                //有開多執行續，邊跳轉頁面邊寄信
+                                //註冊成功，跳轉到成功頁面
+                                setTimeout( location.href = "checkcode.html",500)
                             } else {
                                 //註冊失敗，給error_msg添加錯誤訊息
                                 alert(data.msg)
